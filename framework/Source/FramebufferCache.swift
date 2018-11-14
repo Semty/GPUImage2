@@ -28,6 +28,7 @@ public class FramebufferCache {
         
         if(framebufferCache.count > 20) {
             print("Warning: Runaway framebuffer cache with size: \(framebufferCache.count)")
+            purgeAllUnassignedFramebuffers()
         }
         
         if ((framebufferCache[hash]?.count ?? -1) > 0) {
